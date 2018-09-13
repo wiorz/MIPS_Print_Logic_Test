@@ -133,36 +133,27 @@ CHECK_ZEROES_INDIVIDUALS:
 
 CHECK_INCREMENT_ALPHA:		
 	#Check alpha
-	la $t0, alpha
-	lw $t3, 0($t0) 
-	bne $t3, 1, CHECK_INCREMENT_BRAVO
+	bne 	$s4, 0, CHECK_INCREMENT_BRAVO
 	
 	# Increment zero
 	addi	$t1, $t1, 1
 	
 CHECK_INCREMENT_BRAVO:
 	#Check alpha
-	la	$t0, bravo
-	lw	$t3,0($t0) 
-	bne	$t3, 1, CHECK_INCREMENT_GAMMA
+	bne	$s5, 0, CHECK_INCREMENT_GAMMA
 	
-	# Increment zero
 	addi	$t1, $t1, 1
 
 CHECK_INCREMENT_GAMMA:
 	#Check alpha
-	la 	$t0, gamma
-	lw 	$t3, 0($t0) 
-	bne	$t3, 1, CHECK_INCREMENT_DELTA
+	bne	$s6, 0, CHECK_INCREMENT_DELTA
 	
 	# Increment zero
 	addi	$t1, $t1, 1
 
 CHECK_INCREMENT_DELTA:
 	#Check alpha
-	la	$t0, delta
-	lw	$t3, 0($t0) 
-	bne	$t3, 1, PRINT_ZEROES
+	bne	$s7, 0, PRINT_ZEROES
 	
 	# Increment zero
 	addi	$t1, $t1, 1
